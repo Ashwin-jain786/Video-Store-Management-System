@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Store Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Video Store Management</h1>
+        
+        <div class="menu">
+            <button class="menu-btn active" data-section="add">Add Video</button>
+            <button class="menu-btn" data-section="checkout">Check Out</button>
+            <button class="menu-btn" data-section="return">Return</button>
+            <button class="menu-btn" data-section="rate">Rate</button>
+            <button class="menu-btn" data-section="inventory">Inventory</button>
+            <button class="menu-btn" data-section="customers">Customers</button>
+            <button id="clear-data-btn" class="menu-btn" style="background-color: #dc3545;">Clear All Data</button>
+        </div>
+
+        <div id="add" class="section active">
+            <h2>Add New Video</h2>
+            <form id="add-form">
+                <input type="text" id="video-name" placeholder="Video name" required>
+                <input type="text" id="video-category" placeholder="Category">
+                <input type="text" id="video-year" placeholder="Year">
+                <input type="text" id="video-director" placeholder="Director">
+                <button type="submit">Add Video</button>
+            </form>
+        </div>
+
+        <div id="checkout" class="section">
+            <h2>Check Out Video</h2>
+            <form id="checkout-form">
+                <input type="text" id="checkout-name" placeholder="Video name" required>
+                <select id="checkout-customer" required>
+                    <option value="">Select Customer</option>
+                </select>
+                <button type="submit">Check Out</button>
+            </form>
+        </div>
+
+        <div id="return" class="section">
+            <h2>Return Video</h2>
+            <form id="return-form">
+                <input type="text" id="return-name" placeholder="Video name" required>
+                <select id="return-customer" required>
+                    <option value="">Select Customer</option>
+                </select>
+                <button type="submit">Return Video</button>
+            </form>
+        </div>
+
+        <div id="rate" class="section">
+            <h2>Rate Video</h2>
+            <form id="rate-form">
+                <input type="text" id="rate-name" placeholder="Video name" required>
+                <input type="number" id="rating" min="1" max="5" placeholder="Rating (1-5)" required>
+                <button type="submit">Submit Rating</button>
+            </form>
+        </div>
+
+        <div id="inventory" class="section">
+            <h2>Video Inventory</h2>
+            <table id="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Video Name</th>
+                        <th>Category</th>
+                        <th>Year</th>
+                        <th>Director</th>
+                        <th>Status</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div id="customers" class="section">
+            <h2>Customer Management</h2>
+            <div class="customer-forms">
+                <form id="add-customer-form">
+                    <h3>Add Customer</h3>
+                    <input type="text" id="customer-name" placeholder="Name" required>
+                    <input type="email" id="customer-email" placeholder="Email" required>
+                    <input type="tel" id="customer-phone" placeholder="Phone" required>
+                    <button type="submit">Add Customer</button>
+                </form>
+
+                <form id="manage-customer-form">
+                    <h3>Manage Customer</h3>
+                    <select id="customer-select" required>
+                        <option value="">Select Customer</option>
+                    </select>
+                    <input type="text" id="edit-customer-name" placeholder="Name">
+                    <input type="email" id="edit-customer-email" placeholder="Email">
+                    <input type="tel" id="edit-customer-phone" placeholder="Phone">
+                    <div class="customer-buttons">
+                        <button type="button" id="update-customer-btn">Update</button>
+                        <button type="button" id="delete-customer-btn">Delete</button>
+                    </div>
+                </form>
+            </div>
+
+            <table id="customers-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Rentals</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
